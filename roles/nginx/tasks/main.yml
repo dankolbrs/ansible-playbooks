@@ -14,9 +14,28 @@
     name=nginx
     state=latest
 
+- name: open port
+  firewalld:
+    zone=public
+    immediate=yes
+    service=http
+    permanent=true
+    state=enabled
+  notify:
+  - restart firewall
+
+- name: copy template
+  template:
+    src: nginx.j2
+    dest: /etc/nginx/nginx.conf
+  notify:
+  - restart nginx
+
 - name: enable nginx
   service:
     name=nginx
     state=started
     enabled=yes
+  
 ...
+
