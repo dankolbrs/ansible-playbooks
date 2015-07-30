@@ -1,6 +1,0 @@
----
-- name: add reverse proxy
-  hosts: nginx_servers
-  roles: 
-  - nginx
-...

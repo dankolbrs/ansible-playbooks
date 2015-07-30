@@ -1,6 +1,11 @@
 ---
 - name: make the nginx proxy
   hosts: nginx_servers
+  vars_prompt:
+    - name: "proxy_location"
+      prompt: "Where is the proxy going?"
+      default: "someserver"
+      private: no
   roles:
-  - nginx_proxy
+    - nginx
 ...
