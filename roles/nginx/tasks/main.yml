@@ -1,0 +1,22 @@
+---
+  - name: Ensure up to date
+    yum: 
+      name=*
+      state=latest
+
+  - name: Enabled Epel
+    yum:
+      name=epel-release
+      state=latest
+
+  - name: Add nginx
+    yum:
+      name=nginx
+      state=latest
+
+  - name: enable nginx
+    service:
+      name=nginx
+      state=started
+      enabled=yes
+

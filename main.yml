@@ -1,0 +1,5 @@
+---
+  - name: make the nginx proxy
+    hosts: nginx_servers
+    roles:
+      - nginx_proxy
