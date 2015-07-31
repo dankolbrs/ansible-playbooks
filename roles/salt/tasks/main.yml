@@ -1,0 +1,20 @@
+---
+- name: install salt-minion
+  yum:
+    name=salt-minion
+    state=latest
+
+- name: copy  template
+  template:
+    src: minion.j2
+    dest: /etc/salt/minion
+  notify:
+  - restart salt-minion 
+
+- name: enable salt-minion 
+  service:
+    name=salt-minion
+    state=started
+    enabled=yes
+...
+

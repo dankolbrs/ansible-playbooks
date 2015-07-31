@@ -1,0 +1,12 @@
+---
+- name: salt it 
+  vars_prompt:
+    - name: "salt-master"
+      prompt: "Where is the salt-master?"
+      default: "salt"
+      private: no
+  roles:
+    - epel
+    - update
+    - salt
+...
