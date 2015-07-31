@@ -1,14 +1,4 @@
 ---
-- name: Ensure up to date
-  yum: 
-    name=*
-    state=latest
-
-- name: Enabled Epel
-  yum:
-    name=epel-release
-    state=latest
-
 - name: Add nginx
   yum:
     name=nginx
@@ -36,6 +26,5 @@
     name=nginx
     state=started
     enabled=yes
-  
 ...
 

@@ -7,5 +7,7 @@
       default: "someserver"
       private: no
   roles:
+    - epel
+    - update
     - nginx
 ...
